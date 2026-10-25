@@ -128,6 +128,15 @@
 
   /* ── SCROLL REVEAL OBSERVER ─────────────────────────────────────────────── */
   const revealElements = document.querySelectorAll('.reveal');
+
+  // Immediately make deep-linked section visible if opened with a hash (e.g. #onion-guide)
+  if (window.location.hash) {
+    const targetSection = document.querySelector(window.location.hash);
+    if (targetSection) {
+      targetSection.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+  }
+
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -136,9 +145,21 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.05, rootMargin: '60px 0px 60px 0px' });
 
-    revealElements.forEach(el => revealObserver.observe(el));
+    revealElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 60 && rect.bottom > -60) {
+        el.classList.add('visible');
+      } else {
+        revealObserver.observe(el);
+      }
+    });
+
+    // Enable reveal transitions only for remaining off-screen elements
+    requestAnimationFrame(() => {
+      document.documentElement.classList.add('js-reveal');
+    });
   } else {
     revealElements.forEach(el => el.classList.add('visible'));
   }

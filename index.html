@@ -4,13 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Cairn Browser - A sovereign, high-performance desktop browser engineered for privacy, universal add-on support, side-by-side split screen, and multi-hop Onion routing." />
-  <title>Cairn Browser — Sovereign Desktop Browsing</title>
+  <link rel="canonical" href="https://dev-cairn.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dev-cairn.github.io/" />
+  <meta property="og:title" content="Cairn Browser — Sovereign Desktop Browsing" />
+  <meta property="og:description" content="A private, high-performance desktop browser with Onion Routing, Password Vault, and zero data collection." />
+  <meta property="og:image" content="https://dev-cairn.github.io/assets/app-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://dev-cairn.github.io/" />
+  <meta name="twitter:title" content="Cairn Browser — Sovereign Desktop Browsing" />
+  <meta name="twitter:description" content="Zero telemetry, universal add-on support, and multi-hop decentralized Onion routing." />
+  <meta name="twitter:image" content="https://dev-cairn.github.io/assets/app-logo.png" />
+  <title>Cairn Browser</title>
   <link rel="icon" type="image/png" href="assets/icon.png" />
   <link rel="apple-touch-icon" href="assets/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>
+    // Early hash initialization to guarantee immediate card visibility on deep-link navigation
+    try {
+      if (window.location.hash) {
+        document.documentElement.classList.add('has-hash');
+      }
+    } catch (_) {}
+  </script>
 </head>
 <body class="dark-theme">
 

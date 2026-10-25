@@ -1957,13 +1957,24 @@ body.light-theme .theme-moon { display: inline-block; }
 
 /* ── SCROLL REVEAL ANIMATIONS ─────────────────────────────────────────────── */
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Subtle reveal only after page is initialized and not targeting an anchor */
+.js-reveal .reveal:not(.visible) {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Immediately display cards on deep-linked sections, onion guide, and visible targets */
+.js-reveal .reveal.visible,
+:target .reveal,
+#onion-guide .reveal,
+.onion-guide-section .reveal {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* ── TOAST NOTIFICATION ───────────────────────────────────────────────────── */
