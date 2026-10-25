@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cairn Browser - A sovereign, high-performance desktop browser engineered for privacy, universal add-on support, side-by-side split screen, and multi-hop Onion routing." />
+  <title>Cairn Browser — Sovereign Desktop Browsing</title>
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <link rel="apple-touch-icon" href="assets/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="dark-theme">
+
+  <!-- TOP BANNER -->
+  <aside class="top-announcement" aria-label="Version announcement">
+    <div class="container announcement-inner">
+      <span class="announcement-badge">Official Release</span>
+      <span class="announcement-text">Cairn v1.2 is officially live on the Microsoft Store &amp; Direct Outrageous Edition.</span>
+      <a href="#downloads" class="announcement-link">Get Cairn &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- NAVIGATION -->
+  <header class="nav-wrapper">
+    <nav class="nav" id="nav" aria-label="Main Navigation">
+      <div class="container nav-inner">
+        <!-- OFFICIAL LOGO -->
+        <a class="nav-logo" href="#hero">
+          <img src="assets/icon.png" alt="Cairn Browser Logo" class="brand-logo-img" />
+          <div class="logo-text">
+            <span class="logo-name">Cairn</span>
+            <span class="logo-tag">Desktop</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#addons">Add-ons</a></li>
+          <li><a href="#onion-guide">Onion Guide</a></li>
+          <li><a href="#outrageous">Outrageous</a></li>
+          <li><a href="#downloads">Downloads</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- THEME TOGGLE (DARK BROWSER THEME / WHITE THEME) -->
+          <button class="btn-theme-toggle" id="theme-toggle" aria-label="Toggle dark or light theme" title="Switch Theme">
+            <span class="theme-toggle-icon theme-sun">&#x2600;&#xFE0F;</span>
+            <span class="theme-toggle-icon theme-moon">&#x1F319;</span>
+            <span class="theme-toggle-label">Theme</span>
+          </button>
+
+          <a href="https://apps.microsoft.com/detail/cairn-browser" target="_blank" rel="noopener noreferrer" class="btn btn-store-nav" title="Download from Microsoft Store">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.949-1.801"/>
+            </svg>
+            <span>MS Store</span>
+          </a>
+
+          <a href="#downloads" class="btn btn-primary-nav">
+            <span>Download</span>
+          </a>
+
+          <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main id="main-content">
+    <section class="hero" id="hero">
+      <div class="hero-bg-shapes" aria-hidden="true">
+        <div class="glow-orb glow-purple"></div>
+        <div class="glow-orb glow-cyan"></div>
+        <div class="hero-grid-mesh"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Zero-Telemetry Sovereign Desktop Workspace</span>
+        </div>
+
+        <h1 class="hero-title">
+          The Desktop Browser Engineered for<br />
+          <span class="highlight-text">Sovereignty and Absolute Privacy.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Cairn restores personal control over your digital workspace. Featuring native multi-hop 
+          Onion routing, Opera add-on catalog integration (with Chrome &amp; Edge stores coming in future updates), 
+          local zero-knowledge encrypted vaults, and true side-by-side split screen — without transmitting a single byte of telemetry.
+        </p>
+
+        <!-- DUAL PRIMARY DOWNLOAD ACTIONS -->
+        <div class="hero-cta-group">
+          <!-- Button 1: Microsoft Store -->
+          <a href="https://apps.microsoft.com/detail/cairn-browser" 
+             id="hero-ms-store-btn"
+             class="btn btn-store-hero" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             data-store-uri="ms-windows-store://pdp/?productid=cairn-browser">
+            <div class="btn-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.949-1.801"/>
+              </svg>
+            </div>
+            <div class="btn-text-wrap">
+              <span class="btn-sub">Get it directly from</span>
+              <span class="btn-main">Microsoft Store</span>
+            </div>
+          </a>
+
+          <!-- Button 2: Outrageous Edition -->
+          <a href="#outrageous" 
+             id="hero-outrageous-btn"
+             class="btn btn-outrageous-hero">
+            <div class="btn-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="btn-text-wrap">
+              <span class="btn-sub">Direct Standalone Release</span>
+              <span class="btn-main">Outrageous Edition</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hero-platforms">
+          <span class="platform-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Windows 11 / 10 64-bit Verified
+          </span>
+          <span class="platform-dot">&bull;</span>
+          <span class="platform-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Zero Cloud Tracking
+          </span>
+          <span class="platform-dot">&bull;</span>
+          <span class="platform-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            100% Free &amp; Sovereign
+          </span>
+        </div>
+
+        <!-- BROWSER WINDOW CHROME MOCKUP -->
+        <div class="browser-mockup-frame reveal">
+          <div class="browser-titlebar">
+            <div class="window-controls">
+              <span class="control-dot dot-close"></span>
+              <span class="control-dot dot-min"></span>
+              <span class="control-dot dot-max"></span>
+            </div>
+
+            <div class="browser-tabs">
+              <div class="mock-tab mock-tab-active">
+                <img src="assets/icon.png" alt="Cairn" class="mock-tab-icon" />
+                <span class="tab-title">Cairn Workspace</span>
+                <span class="tab-close">&times;</span>
+              </div>
+              <div class="mock-tab">
+                <span class="tab-favicon">&#x1F9C5;</span>
+                <span class="tab-title">Onion Privacy Circuit</span>
+                <span class="tab-close">&times;</span>
+              </div>
+              <div class="mock-tab">
+                <span class="tab-favicon">&#x1F9E9;</span>
+                <span class="tab-title">Web Store Extensions</span>
+                <span class="tab-close">&times;</span>
+              </div>
+            </div>
+
+            <div class="browser-actions-right">
+              <span class="split-icon-btn" title="Dual Split View Active">&#x275A;&#x275A; Split View</span>
+            </div>
+          </div>
+
+          <div class="browser-toolbar">
+            <div class="nav-buttons">
+              <button class="nav-btn" disabled>&larr;</button>
+              <button class="nav-btn" disabled>&rarr;</button>
+              <button class="nav-btn">&#x21BB;</button>
+            </div>
+
+            <div class="mock-omnibox">
+              <span class="security-lock" title="Local Sovereign Connection">&#x1F512;</span>
+              <span class="omnibox-url">cairn://workspace/research-hub</span>
+              <span class="shield-badge-active" title="Onion Shield Active">
+                <span class="shield-pulse"></span>
+                <span>TOR ROUTING</span>
+              </span>
+            </div>
+
+            <div class="toolbar-extensions">
+              <span class="ext-icon" title="uBlock Origin Active">&#x1F6E1;</span>
+              <span class="ext-icon" title="Bitwarden Vault Locked">&#x1F511;</span>
+              <span class="ext-icon" title="Dark Reader Active">&#x1F319;</span>
+            </div>
+          </div>
+
+          <!-- DUAL VIEWPORT SIMULATION -->
+          <div class="mock-viewport-container">
+            <div class="mock-viewport-left">
+              <div class="viewport-header">
+                <span class="viewport-title">Primary Canvas — Encrypted Research</span>
+                <span class="status-pill status-secure">AES-256 Local Vault</span>
+              </div>
+              <div class="mock-content-card">
+                <div class="mock-row title-row"></div>
+                <div class="mock-row line-long"></div>
+                <div class="mock-row line-med"></div>
+                <div class="mock-row line-short"></div>
+                <div class="mock-grid-sample">
+                  <div class="mock-box"></div>
+                  <div class="mock-box"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mock-split-divider"></div>
+
+            <div class="mock-viewport-right">
+              <div class="viewport-header">
+                <span class="viewport-title">Side Canvas — Parallel Reference</span>
+                <span class="status-pill status-onion">Onion Exit: 185.220.101.5</span>
+              </div>
+              <div class="mock-content-card">
+                <div class="mock-circuit-preview">
+                  <div class="circuit-step"><span class="step-dot"></span><span>Client</span></div>
+                  <div class="circuit-arrow">&rarr;</div>
+                  <div class="circuit-step"><span class="step-dot"></span><span>Guard Node</span></div>
+                  <div class="circuit-arrow">&rarr;</div>
+                  <div class="circuit-step"><span class="step-dot"></span><span>Middle Relay</span></div>
+                  <div class="circuit-arrow">&rarr;</div>
+                  <div class="circuit-step"><span class="step-dot"></span><span>Exit Node</span></div>
+                </div>
+                <div class="mock-row line-med"></div>
+                <div class="mock-row line-long"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KEY STATS -->
+        <div class="hero-metrics-bar">
+          <div class="metric-item">
+            <span class="metric-num">0 KB</span>
+            <span class="metric-label">Telemetry Sent</span>
+          </div>
+          <div class="metric-separator"></div>
+          <div class="metric-item">
+            <span class="metric-num">Opera</span>
+            <span class="metric-label">Add-on Catalog</span>
+          </div>
+          <div class="metric-separator"></div>
+          <div class="metric-item">
+            <span class="metric-num">3-Hop</span>
+            <span class="metric-label">Onion Anonymity</span>
+          </div>
+          <div class="metric-separator"></div>
+          <div class="metric-item">
+            <span class="metric-num">AES-256</span>
+            <span class="metric-label">Zero-Knowledge Vault</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT CAIRN (BIO & PHILOSOPHY) -->
+    <section class="section bio-section" id="about">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-eyebrow">The Cairn Manifesto</span>
+          <h2 class="section-heading">
+            A Sovereign Desktop Browser.<br />
+            <span class="highlight-text">Built to Protect, Not to Harvest.</span>
+          </h2>
+          <p class="section-subtext">
+            Modern commercial browsers have evolved into surveillance engines designed to track your 
+            reading habits, log your searches, and tether your identity to remote cloud infrastructure. 
+            Cairn is engineered as an unapologetic countermeasure: a pure, sovereign desktop workspace 
+            that belongs exclusively to you.
+          </p>
+        </div>
+
+        <div class="bio-grid">
+          <div class="bio-card reveal">
+            <div class="card-icon-box icon-blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="card-title">Sovereign Local Vault</h3>
+            <p class="card-desc">
+              Your passwords, session data, notes, and pinned tabs are secured directly on your machine 
+              with military-grade AES-256 encryption. No sync servers, no remote tracking databases, 
+              and zero third-party telemetry. You hold the master key.
+            </p>
+          </div>
+
+          <div class="bio-card reveal">
+            <div class="card-icon-box icon-sky">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="card-title">Dual-Engine Split View</h3>
+            <p class="card-desc">
+              Research without window clutter. Cairn’s native side-by-side split screen allows you to run 
+              two live web pages, documentation, or video streams simultaneously on a single display 
+              with seamless ratio adjustments and independent browsing contexts.
+            </p>
+          </div>
+
+          <div class="bio-card reveal">
+            <div class="card-icon-box icon-purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </div>
+            <h3 class="card-title">Multi-Hop Onion Circuit</h3>
+            <p class="card-desc">
+              Route your traffic through decentralized multi-hop SOCKS5 privacy circuits with automatic DNS 
+              leak shielding and WebRTC suppression. Browse native <code>.onion</code> hidden services 
+              with complete network anonymity.
+            </p>
+          </div>
+
+          <div class="bio-card reveal">
+            <div class="card-icon-box icon-emerald">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="card-title">Serverless P2P Meetings</h3>
+            <p class="card-desc">
+              Conduct instant end-to-end encrypted video and voice conferences directly browser-to-browser. 
+              No logins, no room reservations, and no corporate intermediary recording your confidential 
+              discussions.
+            </p>
+          </div>
+
+          <div class="bio-card reveal">
+            <div class="card-icon-box icon-amber">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 class="card-title">Ephemeral Masked Mode</h3>
+            <p class="card-desc">
+              When privacy demands zero trace, Masked Mode spins up an ephemeral, memory-only session. 
+              Cookies, cache, DOM storage, and navigation trails are instantly vaporized the instant 
+              the tab or window closes.
+            </p>
+          </div>
+
+          <div class="bio-card reveal">
+            <div class="card-icon-box icon-rose">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 class="card-title">Hardware PIN Lock</h3>
+            <p class="card-desc">
+              Step away from your workstation with peace of mind. Cairn features a cryptographic lock 
+              screen secured with PBKDF2 key derivation (100,000 iterations). Instantly secure your open 
+              work with <code>Ctrl+Shift+L</code>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADD-ON ECOSYSTEM & MULTI-STORE -->
+    <section class="section addons-section" id="addons">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-eyebrow">Extension Ecosystem</span>
+          <h2 class="section-heading">
+            Your Favorite Add-ons.<br />
+            <span class="highlight-text">Native Opera Support Today.</span>
+          </h2>
+          <p class="section-subtext">
+            Cairn currently features native out-of-the-box integration with the <strong>Opera Add-ons Catalog</strong>. 
+            Support for the Google Chrome Web Store and Microsoft Edge Add-ons is currently in development and scheduled for upcoming releases.
+          </p>
+        </div>
+
+        <!-- 3 STORE SOURCES -->
+        <div class="store-grid">
+          <!-- 1. Opera Add-ons (ACTIVE NOW) -->
+          <div class="store-card store-card-featured reveal">
+            <div class="store-badge badge-active">&#x2714; Supported Now</div>
+            <div class="store-logo-wrap">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                <ellipse cx="12" cy="12" rx="9" ry="10" stroke="#ef4444" stroke-width="2.2"/>
+                <ellipse cx="12" cy="12" rx="4" ry="7" fill="#ef4444"/>
+              </svg>
+            </div>
+            <h3 class="store-title">Opera Add-ons Catalog</h3>
+            <p class="store-desc">
+              Browse and install thousands of lightweight utilities, ad blockers, privacy guards, 
+              and custom productivity extensions directly into Cairn with seamless native compatibility.
+            </p>
+            <a href="https://addons.opera.com" target="_blank" rel="noopener noreferrer" class="store-link store-link-active">
+              <span>Browse &amp; Install Add-ons</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
+          <!-- 2. Chrome Web Store (COMING IN FUTURE UPDATE) -->
+          <div class="store-card store-card-upcoming reveal">
+            <div class="store-badge badge-roadmap">&#x23F3; Coming in Future Update</div>
+            <div class="store-logo-wrap store-logo-muted">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="#0ea5e9" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4" fill="#0ea5e9"/>
+                <path d="M12 2a10 10 0 0 1 8.66 5H12" stroke="#0ea5e9" stroke-width="2"/>
+                <path d="M20.66 7a10 10 0 0 1-5 13.66L12 12" stroke="#0ea5e9" stroke-width="2"/>
+                <path d="M15.66 20.66a10 10 0 0 1-13.66-5L12 12" stroke="#0ea5e9" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="store-title">Chrome Web Store</h3>
+            <p class="store-desc">
+              Direct installation from the Google Chrome Web Store is on our development roadmap. 
+              Our team is working on full cross-manifest integration for an upcoming Cairn release.
+            </p>
+            <div class="store-roadmap-pill">
+              <span class="roadmap-dot"></span>
+              <span>Roadmap Feature &bull; In Development</span>
+            </div>
+          </div>
+
+          <!-- 3. Microsoft Edge Add-ons (COMING IN FUTURE UPDATE) -->
+          <div class="store-card store-card-upcoming reveal">
+            <div class="store-badge badge-roadmap">&#x23F3; Coming in Future Update</div>
+            <div class="store-logo-wrap store-logo-muted">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                <path d="M21.5 14.5c-.8 3.5-3.8 6-7.5 6-4.4 0-8-3.6-8-8 0-4 3-7.3 7-7.9.5 1.5 2 2.9 4 2.9 2.2 0 4-1.8 4-4 0-.4-.1-.7-.2-1-.3-.2-.5-.3-.8-.5C18.5 2.8 15.4 2 12 2 6.5 2 2 6.5 2 12s4.5 10 10 10c4.8 0 8.8-3.4 9.8-8 .1-.5-.3-.5-.3-.5z" fill="#3b82f6"/>
+              </svg>
+            </div>
+            <h3 class="store-title">Microsoft Edge Add-ons</h3>
+            <p class="store-desc">
+              Enterprise productivity and accessibility tools from the Microsoft Edge catalog are 
+              scheduled for future integration to deliver seamless Windows workspace convenience.
+            </p>
+            <div class="store-roadmap-pill">
+              <span class="roadmap-dot"></span>
+              <span>Roadmap Feature &bull; In Development</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- WHY THE ADD-ON ECOSYSTEM MATTERS -->
+        <div class="addon-rationale-box reveal">
+          <div class="rationale-header">
+            <div class="rationale-icon">&#x26A1;</div>
+            <div>
+              <h3 class="rationale-title">Why Universal Add-on Compatibility is Vital</h3>
+              <p class="rationale-subtitle">Defending user choice against modern marketplace deprecations.</p>
+            </div>
+          </div>
+
+          <div class="rationale-grid">
+            <div class="rationale-item">
+              <span class="item-check">&#x2713;</span>
+              <div>
+                <strong>Freedom From Arbitrary Censorship</strong>
+                <p>When proprietary browser vendors unilaterally pull or restrict ad-blocking and privacy extensions, Cairn allows you to seamlessly cross-install the extension from an alternative catalog.</p>
+              </div>
+            </div>
+
+            <div class="rationale-item">
+              <span class="item-check">&#x2713;</span>
+              <div>
+                <strong>Resilient Cross-Store Fallback</strong>
+                <p>If an extension update breaks or is delayed in review on one store, you can pull the verified release directly from another store without waiting weeks for vendor approval.</p>
+              </div>
+            </div>
+
+            <div class="rationale-item">
+              <span class="item-check">&#x2713;</span>
+              <div>
+                <strong>Client-Side Isolation</strong>
+                <p>Cairn runs extensions in restricted isolated boundaries, ensuring third-party extensions can never peer into your local master password vault or extract private session keys.</p>
+              </div>
+            </div>
+
+            <div class="rationale-item">
+              <span class="item-check">&#x2713;</span>
+              <div>
+                <strong>Direct Crx Support</strong>
+                <p>Power users and corporate teams can sideload unpacked or packaged <code>.crx</code> extensions for bespoke internal toolchains without needing a published marketplace listing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONION ROUTING FULL GUIDE -->
+    <section class="section onion-guide-section" id="onion-guide">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-eyebrow section-eyebrow-purple">Decentralized Privacy</span>
+          <h2 class="section-heading">
+            Onion Routing Mode<br />
+            <span class="highlight-text-purple">The Complete Operational Guide.</span>
+          </h2>
+          <p class="section-subtext">
+            Cairn features native Onion Routing support. By routing all browser traffic through a multi-hop 
+            SOCKS5 privacy circuit, your true IP is completely masked, remote DNS resolution prevents ISP 
+            eavesdropping, WebRTC is permanently disabled, and <code>.onion</code> hidden services are unlocked.
+          </p>
+        </div>
+
+        <!-- HOW THE CIRCUIT WORKS VISUAL -->
+        <div class="onion-circuit-card reveal">
+          <h3 class="circuit-header-title">The 3-Hop Decentralized Onion Path</h3>
+          <div class="circuit-diagram">
+            <div class="circuit-node node-client">
+              <div class="node-icon">&#x1F4BB;</div>
+              <span class="node-label">Your Machine</span>
+              <span class="node-sub">Encrypted Traffic</span>
+            </div>
+            <div class="circuit-connector">
+              <div class="connector-line"></div>
+              <span class="connector-badge">SOCKS5</span>
+            </div>
+            <div class="circuit-node node-guard">
+              <div class="node-icon">&#x1F6E1;&#xFE0F;</div>
+              <span class="node-label">Entry Guard</span>
+              <span class="node-sub">First Hop</span>
+            </div>
+            <div class="circuit-connector">
+              <div class="connector-line"></div>
+              <span class="connector-badge">Layer 2</span>
+            </div>
+            <div class="circuit-node node-relay">
+              <div class="node-icon">&#x1F500;</div>
+              <span class="node-label">Middle Relay</span>
+              <span class="node-sub">Second Hop</span>
+            </div>
+            <div class="circuit-connector">
+              <div class="connector-line"></div>
+              <span class="connector-badge">Layer 3</span>
+            </div>
+            <div class="circuit-node node-exit">
+              <div class="node-icon">&#x1F310;</div>
+              <span class="node-label">Exit Node</span>
+              <span class="node-sub">Public Internet</span>
+            </div>
+          </div>
+          <div class="circuit-notice">
+            <span>&#x1F512;</span>
+            <span>Neither your ISP nor destination websites can correlate your true physical IP address with your web requests.</span>
+          </div>
+        </div>
+
+        <!-- PREREQUISITE & STEP BY STEP GUIDE -->
+        <div class="guide-container">
+          <div class="guide-tool-card reveal">
+            <div class="tool-card-badge">Step 0 &bull; Required Tool</div>
+            <h3 class="tool-title">Download SOCKS5 Privacy Client (Tor)</h3>
+            <p class="tool-desc">
+              To route web requests through the Onion network, Cairn pairs with an active Tor SOCKS5 daemon 
+              running on your local machine. For maximum security and separation of privilege, we recommend 
+              running the official Tor Browser in the background.
+            </p>
+
+            <div class="tool-options-grid">
+              <div class="tool-opt-card opt-recommended">
+                <div class="opt-tag">Recommended for Everyone</div>
+                <h4>Tor Browser Bundle</h4>
+                <p>The simplest setup. Install and launch Tor Browser, minimize it to your taskbar, and it automatically exposes an authenticated SOCKS5 proxy on <code>127.0.0.1:9150</code>.</p>
+                <a href="https://www.torproject.org/download/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark">
+                  <span>Download from Tor Project</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+
+              <div class="tool-opt-card">
+                <div class="opt-tag">For Advanced / Developers</div>
+                <h4>Tor Expert Daemon</h4>
+                <p>Headless background Windows service. Runs silently without a UI window on default port <code>127.0.0.1:9050</code>.</p>
+                <div class="code-snippet-box">
+                  <code>winget install TorProject.Tor</code>
+                  <button class="btn-copy-code" data-copy="winget install TorProject.Tor" title="Copy Command">Copy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP-BY-STEP INSTRUCTIONS -->
+          <div class="guide-steps-list">
+            <div class="step-card reveal">
+              <div class="step-indicator">1</div>
+              <div class="step-body">
+                <h4 class="step-title">Start Your Tor Service</h4>
+                <p class="step-text">
+                  Launch <strong>Tor Browser</strong> (or your background Tor service). Connect to the Tor network. 
+                  Once connected, minimize the window. <strong>Keep it running in the background</strong> so Cairn 
+                  can establish its encrypted SOCKS5 pipeline.
+                </p>
+                <div class="step-meta-note">
+                  <span>&#x1F4A1;</span>
+                  <span>Port Reference: <code>127.0.0.1:9150</code> (Tor Browser) or <code>127.0.0.1:9050</code> (Tor Daemon).</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-card reveal">
+              <div class="step-indicator">2</div>
+              <div class="step-body">
+                <h4 class="step-title">Activate Onion Mode in Cairn</h4>
+                <p class="step-text">
+                  In Cairn, click the <strong>Shield Icon</strong> in the address bar (or navigate to 
+                  <code>Settings &rarr; Onion Routing Mode</code>). Select your port (<code>9150</code> or <code>9050</code>) 
+                  and toggle <strong>"Enable Onion Routing Mode"</strong> on.
+                </p>
+                <div class="step-meta-note">
+                  <span>&#x2713;</span>
+                  <span>Cairn will instantly re-bind its proxy socket, activate remote DNS resolution, and suppress WebRTC.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-card reveal">
+              <div class="step-indicator">3</div>
+              <div class="step-body">
+                <h4 class="step-title">Verify Your Circuit &amp; Browse Anonymously</h4>
+                <p class="step-text">
+                  Click <strong>"Verify Privacy Connection"</strong> in Cairn Settings or open 
+                  <code>https://check.torproject.org</code>. Cairn will confirm your encrypted exit node IP and latency. 
+                  You can now freely browse both regular sites and native <code>.onion</code> hidden addresses.
+                </p>
+                <div class="step-meta-note">
+                  <span>&#x1F9C5;</span>
+                  <span>Click <strong>"New Identity"</strong> anytime in Cairn to wipe session cookies and rebuild your circuit path.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ONION SECURITY RULES -->
+        <div class="onion-rules-grid reveal">
+          <div class="rule-card">
+            <div class="rule-icon">&#x26D4;</div>
+            <h4 class="rule-title">Do Not Login to KYC Accounts</h4>
+            <p class="rule-desc">Never sign into your real-name banking, email, or social accounts while in Onion Mode. Doing so associates your identity with the exit node.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-icon">&#x1F6A8;</div>
+            <h4 class="rule-title">Zero Local History Recorded</h4>
+            <p class="rule-desc">All websites visited during Onion Mode are quarantined from your history, recent tabs, and search cache automatically.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-icon">&#x1F6E1;&#xFE0F;</div>
+            <h4 class="rule-title">Built-in LAN Firewall</h4>
+            <p class="rule-desc">Cairn automatically blocks local and private RFC-1918 subnets while Onion Mode is running to prevent internal intranet probes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTRAGEOUS EDITION SECTION -->
+    <section class="section outrageous-section" id="outrageous">
+      <div class="container">
+        <div class="outrageous-banner reveal">
+          <div class="outrageous-content">
+            <div class="outrageous-tag">
+              <span class="tag-fire">&#x26A1;</span>
+              <span>The Power-User Release</span>
+            </div>
+            <h2 class="outrageous-title">Cairn Outrageous Edition</h2>
+            <p class="outrageous-desc">
+              While the official Microsoft Store version is strictly sandboxed for standard consumer safety, 
+              <strong>Outrageous Edition</strong> is our unconstrained, developer-grade desktop distribution. 
+              Built for power users who demand raw performance, advanced network tunneling, custom extension 
+              sideloading, and uncompromised productivity.
+            </p>
+
+            <div class="outrageous-specs-grid">
+              <div class="spec-item">
+                <span class="spec-check">&#x2714;</span>
+                <span>Unrestricted File System Interop</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-check">&#x2714;</span>
+                <span>Standalone Portable &amp; Installer Options</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-check">&#x2714;</span>
+                <span>Bleeding-Edge Feature Preview Channel</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-check">&#x2714;</span>
+                <span>Direct Auto-Update Engine</span>
+              </div>
+            </div>
+
+            <div class="outrageous-actions">
+              <a href="#downloads-outrageous" 
+                 id="outrageous-download-btn"
+                 class="btn btn-outrageous-solid"
+                 data-edition="outrageous">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                <span>Download Outrageous Edition (.exe)</span>
+              </a>
+              <span class="outrageous-version-tag">Version 1.2.0 &bull; Standalone Build</span>
+            </div>
+          </div>
+
+          <div class="outrageous-badge-card">
+            <div class="badge-card-inner">
+              <div class="badge-icon-wrap">
+                <img src="assets/icon.png" alt="Cairn Outrageous" class="outrageous-emblem" />
+              </div>
+              <div class="badge-card-title">Full Autonomy</div>
+              <div class="badge-card-sub">No Store Sandbox Constraints</div>
+              <ul class="badge-card-list">
+                <li>Direct Hardware Acceleration</li>
+                <li>Zero Telemetry Daemon</li>
+                <li>Sovereign Offline Architecture</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOADS HUB (STORE VS OUTRAGEOUS) -->
+    <section class="section downloads-section" id="downloads">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-eyebrow">Release Channels</span>
+          <h2 class="section-heading">
+            Choose Your Cairn Distribution.<br />
+            <span class="highlight-text">Always Free. Always Yours.</span>
+          </h2>
+          <p class="section-subtext">
+            Select the distribution that matches your workflow. Both editions are completely free 
+            and respect your privacy unconditionally.
+          </p>
+        </div>
+
+        <div class="downloads-comparison-grid">
+          <!-- CARD 1: MICROSOFT STORE EDITION -->
+          <div class="download-card card-store reveal">
+            <div class="card-ribbon ribbon-store">Recommended for Most Users</div>
+            <div class="card-head">
+              <div class="os-icon-box">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.949-1.801"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="edition-title">Microsoft Store Edition</h3>
+                <span class="edition-sub">Verified &amp; Certified Distribution</span>
+              </div>
+            </div>
+
+            <p class="edition-desc">
+              Officially published on the Microsoft Store. Fully sandboxed for safe everyday browsing with seamless automated background updates handled by Windows.
+            </p>
+
+            <ul class="edition-features">
+              <li><span class="feat-check">&#x2713;</span> Windows Store certified &amp; trusted</li>
+              <li><span class="feat-check">&#x2713;</span> Zero SmartScreen untrusted warnings</li>
+              <li><span class="feat-check">&#x2713;</span> Automatic silent background updates</li>
+              <li><span class="feat-check">&#x2713;</span> Multi-profile &amp; Password Vault included</li>
+              <li><span class="feat-check">&#x2713;</span> Full Onion Routing &amp; Split Screen</li>
+            </ul>
+
+            <div class="card-action-box">
+              <a href="https://apps.microsoft.com/detail/cairn-browser" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="btn btn-store-card"
+                 data-store-uri="ms-windows-store://pdp/?productid=cairn-browser">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.949-1.801"/>
+                </svg>
+                <span>Get from Microsoft Store</span>
+              </a>
+              <span class="action-caption">Direct Microsoft Store link &bull; Windows 10/11</span>
+            </div>
+          </div>
+
+          <!-- CARD 2: OUTRAGEOUS EDITION -->
+          <div class="download-card card-outrageous reveal" id="downloads-outrageous">
+            <div class="card-ribbon ribbon-outrageous">Power User &bull; Standalone</div>
+            <div class="card-head">
+              <div class="os-icon-box box-outrageous">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <div>
+                <h3 class="edition-title">Outrageous Edition</h3>
+                <span class="edition-sub">Standalone Direct Installer</span>
+              </div>
+            </div>
+
+            <p class="edition-desc">
+              The full unconstrained desktop package. Tailored for software engineers, power users, and security professionals requiring total filesystem and network latitude.
+            </p>
+
+            <ul class="edition-features">
+              <li><span class="feat-check">&#x2713;</span> Standalone NSIS executable installer</li>
+              <li><span class="feat-check">&#x2713;</span> Unrestricted extension permissions &amp; crx loading</li>
+              <li><span class="feat-check">&#x2713;</span> Experimental devtools &amp; network overrides</li>
+              <li><span class="feat-check">&#x2713;</span> Direct sovereign auto-update system</li>
+              <li><span class="feat-check">&#x2713;</span> Portable mode ready for USB / offline drives</li>
+            </ul>
+
+            <div class="card-action-box">
+              <a href="#outrageous-download" 
+                 class="btn btn-outrageous-card"
+                 id="outrageous-direct-action-btn"
+                 data-edition="outrageous">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                <span>Download Outrageous Edition (.exe)</span>
+              </a>
+              <span class="action-caption">Cairn-Outrageous-Setup.exe &bull; 64-bit</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- INSTALLATION WALKTHROUGH -->
+        <div class="install-walkthrough-card reveal">
+          <h3 class="walkthrough-title">Windows Installation Guide</h3>
+          <div class="walkthrough-grid">
+            <div class="walkthrough-step">
+              <div class="wt-num">1</div>
+              <div class="wt-content">
+                <strong>Choose Edition</strong>
+                <p>Pick Microsoft Store for automatic updates or Outrageous Edition for standalone deployment.</p>
+              </div>
+            </div>
+            <div class="walkthrough-step">
+              <div class="wt-num">2</div>
+              <div class="wt-content">
+                <strong>Execute Setup</strong>
+                <p>If installing Outrageous Edition and SmartScreen triggers, click <em>More Info &rarr; Run Anyway</em>.</p>
+              </div>
+            </div>
+            <div class="walkthrough-step">
+              <div class="wt-num">3</div>
+              <div class="wt-content">
+                <strong>Instant Launch</strong>
+                <p>Cairn launches immediately with your personal profile. No account registration or cloud sign-in is ever requested.</p>
+              </div>
+            </div>
+            <div class="walkthrough-step">
+              <div class="wt-num">4</div>
+              <div class="wt-content">
+                <strong>Install Add-ons</strong>
+                <p>Visit the Opera Add-ons Catalog to equip your favorite ad blocker and essential productivity tools in seconds.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-eyebrow">Common Inquiries</span>
+          <h2 class="section-heading">Frequently Asked Questions</h2>
+          <p class="section-subtext">Clear, straightforward answers about Cairn’s privacy architecture and operation.</p>
+        </div>
+
+        <div class="faq-accordion reveal">
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Is Cairn affiliated with or funded by Google, Microsoft, or any ad tech firm?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-panel">
+              <p>No. Cairn is an independent sovereign desktop browser project developed with a zero-telemetry mandate. There are no corporate advertisers, no data brokers, and no tracking relationships.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>How are my passwords and bookmarks stored?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-panel">
+              <p>All passwords, bookmarks, history entries, and notes are encrypted on your local disk using AES-256-GCM. Your master password derives an encryption key with PBKDF2. Because Cairn has no remote sync servers, your data never leaves your device.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Which extension stores are supported in Cairn right now?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-panel">
+              <p>Cairn currently features native support for the <strong>Opera Add-ons Catalog</strong> (<code>addons.opera.com</code>). Direct one-click installation from the Google Chrome Web Store and Microsoft Edge Add-ons is actively being developed and will arrive in upcoming version updates.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Why do I need Tor Browser running in the background for Onion Mode?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-panel">
+              <p>Separation of privilege. By connecting to a background Tor SOCKS5 daemon rather than embedding fragile native binaries inside the UI thread, Cairn prevents memory leaks, ensures independent routing lifecycle, and gives you complete control over your Tor proxy circuit.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>What is the difference between the Microsoft Store and Outrageous Edition?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-panel">
+              <p>The Microsoft Store edition is packaged within Windows sandboxing guidelines and receives automatic background updates via Windows Update. The Outrageous Edition is an unconstrained standalone installer that provides portable capabilities, uninhibited extension loading, and developer-level network customization.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand-col">
+        <!-- OFFICIAL LOGO IN FOOTER -->
+        <a class="footer-logo" href="#hero">
+          <img src="assets/icon.png" alt="Cairn Browser Logo" class="brand-logo-img-footer" />
+          <span class="footer-brand-title">Cairn Browser</span>
+        </a>
+        <p class="footer-desc">
+          The sovereign, privacy-first desktop workspace. Zero telemetry, universal add-on support, 
+          and multi-hop decentralized Onion routing.
+        </p>
+
+        <!-- DEVELOPER WITH LINKEDIN PROFILE LINK & ICON -->
+        <div class="footer-credits">
+          Developed by 
+          <a href="https://www.linkedin.com/in/md-tareq-shah-alam/" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="developer-linkedin-link" 
+             title="View Md Tareq Shah Alam's profile on LinkedIn">
+            <strong>Md Tareq Shah Alam</strong>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-nav-col">
+        <span class="col-title">Navigation</span>
+        <ul class="col-links">
+          <li><a href="#about">About Cairn</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#addons">Add-on Ecosystem</a></li>
+          <li><a href="#onion-guide">Onion Setup Guide</a></li>
+          <li><a href="#outrageous">Outrageous Edition</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <span class="col-title">Downloads</span>
+        <ul class="col-links">
+          <li><a href="https://apps.microsoft.com/detail/cairn-browser" target="_blank" rel="noopener noreferrer">Microsoft Store</a></li>
+          <li><a href="#downloads-outrageous">Outrageous Edition</a></li>
+          <li><a href="#downloads">System Requirements</a></li>
+          <li><a href="https://www.torproject.org/download/" target="_blank" rel="noopener noreferrer">Tor Project Client</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <span class="col-title">Privacy Pledge</span>
+        <p class="privacy-pledge-text">
+          Cairn does not log keystrokes, track browsing destinations, or sell telemetry. 
+          Your browser is your castle.
+        </p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="current-year">2026</span> Cairn Browser. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#about">Privacy Sovereign</a>
+        <span>&bull;</span>
+        <a href="#addons">Triple Store Engine</a>
+        <span>&bull;</span>
+        <a href="#onion-guide">Onion Shield</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
